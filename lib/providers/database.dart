@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import '../models/pokemon.dart';
 
 class DatabaseMethods {
+  //Find all Pokemons
   Future<List<Pokemon>> getAllPokemon() async {
     final url = Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=151');
     List<Pokemon> pokemons = [];
@@ -51,6 +52,7 @@ class DatabaseMethods {
             color: color,
           ),
         );
+        print('Amount of loaded Pokemons: ${i + 1}');
       }
     } catch (e) {
       print('Error on fetching all Pokemons: $e');
