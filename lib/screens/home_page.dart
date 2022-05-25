@@ -5,6 +5,7 @@ import 'package:pokeball_widget/pokeball_widget.dart';
 import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/providers/database.dart';
 import 'package:pokedex/screens/pokemon_details.dart';
+import 'package:pokedex/widgets/loading_poke_ball.dart';
 import 'package:pokedex/widgets/poke_card.dart';
 import 'package:provider/provider.dart';
 
@@ -88,9 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          CircularProgressIndicator(
-                            color: Colors.red,
-                          ),
+                          PokeBallLoading(),
                           Text(
                             "Please Wait... Pokemons Loading...",
                             textAlign: TextAlign.center,
