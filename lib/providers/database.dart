@@ -3,11 +3,17 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+//import 'package:provider/provider.dart';
 
 //Model
 import '../models/pokemon.dart';
 
+//Import de loading.
+import './loading_provider.dart';
+
 class DatabaseMethods {
+  LoadingProvider load;
+
   //Find all Pokemons
   Future<List<Pokemon>> getAllPokemon() async {
     final url = Uri.parse('https://pokeapi.co/api/v2/pokemon?limit=151');

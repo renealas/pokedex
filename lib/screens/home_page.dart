@@ -5,8 +5,10 @@ import 'package:pokeball_widget/pokeball_widget.dart';
 import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/providers/database.dart';
 import 'package:pokedex/screens/pokemon_details.dart';
+import 'package:pokedex/widgets/icons/pokeball_static_icon.dart';
 import 'package:pokedex/widgets/loading_poke_ball.dart';
 import 'package:pokedex/widgets/poke_card.dart';
+import 'package:pokedex/widgets/shake_widget.dart';
 import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -89,7 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          PokeBallLoading(),
+                          //PokeBallLoading(),
+                          ShakeWidget(
+                            child: PokeBallStaticIcon(),
+                          ),
                           Text(
                             "Please Wait... Pokemons Loading...",
                             textAlign: TextAlign.center,
