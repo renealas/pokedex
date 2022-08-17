@@ -5,8 +5,7 @@ import 'package:pokeball_widget/pokeball_widget.dart';
 import 'package:pokedex/models/pokemon.dart';
 import 'package:pokedex/providers/database.dart';
 import 'package:pokedex/screens/pokemon_details.dart';
-import 'package:pokedex/widgets/icons/pokeball_static_icon.dart';
-import 'package:pokedex/widgets/loading_poke_ball.dart';
+//import 'package:pokedex/widgets/icons/pokeball_static_icon.dart';
 import 'package:pokedex/widgets/poke_card.dart';
 import 'package:pokedex/widgets/shake_widget.dart';
 import 'package:provider/provider.dart';
@@ -93,7 +92,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: [
                           //PokeBallLoading(),
                           ShakeWidget(
-                            child: PokeBallStaticIcon(),
+                            child: Container(
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage('assets/pokeball.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                                shape: BoxShape.circle,
+                              ),
+                            ), //PokeBallStaticIcon(),
                           ),
                           Text(
                             "Please Wait... Pokemons Loading...",
